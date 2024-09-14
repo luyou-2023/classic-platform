@@ -12,6 +12,7 @@
  * <http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt>
  *-------------------------------- Arctic Core -----------------------------*/
 
+//该结构体包含了 ECU（电子控制单元）管理系统所需的各种配置信息。这个结构体是根据 AUTOSAR 标准定义的，并且在编译时根据 ARXML 文件中的配置信息生成
 
 #if !(((ECUM_SW_MAJOR_VERSION == 2) && (ECUM_SW_MINOR_VERSION == 3)) )
 #error EcuM: Configuration file expected BSW module version to be 2.3.\*
@@ -164,6 +165,24 @@
 #include "FrTp.h"
 #endif
 
+/***
+Post-Build 变种标识：EcuMPostBuildVariant，用于标识特定的 Post-Build 变种。
+配置一致性哈希值：EcuMConfigConsistencyHashLow 和 EcuMConfigConsistencyHashHigh，用于验证配置的一致性。
+默认关机目标状态：EcuMDefaultShutdownTarget，指定默认的关机目标状态。
+默认睡眠模式：EcuMDefaultSleepMode，指定默认的睡眠模式。
+默认应用模式：EcuMDefaultAppMode，指定默认的应用模式。
+最小运行持续时间：EcuMRunMinimumDuration，指定最小的运行持续时间。
+非易失存储读取超时时间：EcuMNvramReadAllTimeout，指定非易失存储读取超时时间。
+非易失存储写入超时时间：EcuMNvramWriteAllTimeout，指定非易失存储写入超时时间。
+正常 MCU 模式：EcuMNormalMcuMode，指定正常 MCU 模式的类型。
+诊断事件 ID：EcuMDemInconsistencyEventId、EcuMDemRamCheckFailedEventId、EcuMDemAllRunRequestsKilledEventId，用于诊断事件的 ID。
+睡眠模式配置指针：EcuMSleepModeConfig，指向睡眠模式的配置数据。
+唤醒源配置指针：EcuMWakeupSourceConfig，指向唤醒源的配置数据。
+其他模块配置指针：包括但不限于 Mcu_ConfigType、Can_ConfigType、Dio_ConfigType 等模块的配置数据。
+
+
+EcuM_ConfigType 结构体中的字段及其定义是基于 AUTOSAR（Automotive Open System Architecture）标准的一部分。AUTOSAR 规定了一个开放的架构，以支持汽车电子系统的标准化和模块化开发。EcuM（ECU Management）是 AUTOSAR 定义的一个基础软件（BSW）模块之一，负责管理 ECU（电子控制单元）的启动、停止以及各种运行模式。
+**/
 
 typedef struct EcuM_ConfigS
 {

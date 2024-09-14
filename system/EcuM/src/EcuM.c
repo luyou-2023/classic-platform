@@ -289,6 +289,7 @@ void EcuM_Init(void) {
         // Setup interrupts
         Os_IsrInit();
         // Determine PostBuild configuration
+        //根据 ARXML 文件中的配置信息生成
         EcuM_World.config = EcuM_DeterminePbConfiguration();
 
 #if defined(USE_RTM)
