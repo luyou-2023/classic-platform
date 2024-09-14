@@ -15,7 +15,7 @@
 /** @reqSettings DEFAULT_SPECIFICATION_REVISION=4.3.0 */
 
 /*lint -e451 -e9021 AUTOSAR API SWS_MemMap_00003 */
-
+//这些代码通常用于初始化和清理不同类型的内存区域。这些内存区域的定义和配置通常来源于 ARXML 文件，特别是在 AUTOSAR 环境中。
 #define BSWM_MEMMAP_ERROR
 
 #ifdef BSWM_START_SEC_VAR_INIT_UNSPECIFIED

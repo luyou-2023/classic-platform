@@ -353,6 +353,7 @@ static boolean BswM_Internal_RestoreListState(BswM_ListStateType *stateBuffer, s
  * @return void
  */
 static void BswM_Internal_IterateActionList(const sint32 entryListIndex) {
+    //ARXML 文件中定义的动作列表
     const BswM_ActionListType *actionLists = &(BswM_ConfigPtr->ActionListData[0]);
     const BswM_ActionListItemType *item;
     uint32 itemIndex = 0;
