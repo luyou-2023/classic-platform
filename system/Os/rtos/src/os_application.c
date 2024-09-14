@@ -24,6 +24,9 @@
 /* ----------------------------[private function prototypes]-----------------*/
 /* ----------------------------[private variables]---------------------------*/
 #if OS_APPLICATION_CNT!=0
+/**
+这段代码定义了一个应用程序变量数组 Os_AppVarType Os_AppVar[OS_APPLICATION_CNT];，其中 OS_APPLICATION_CNT 是一个配置宏，定义了系统中的应用程序数量。这个宏通常是由生成工具根据 ARXML 文件中的配置信息生成的。
+**/
 OsAppVarType Os_AppVar[OS_APPLICATION_CNT];
 #endif
 
@@ -57,6 +60,7 @@ OsAppVarType Os_AppVar[OS_APPLICATION_CNT];
  *
  * @return <identifier of running OS-Application> or INVALID_OSAPPLICATION
  */
+ //这个函数返回当前运行的应用程序 ID。这个函数的行为和返回值可能受到 ARXML 文件中配置的应用程序信息的影响。
 /** @req SWS_Os_00016  OS provides the service GetApplicationID() */
 ApplicationType GetApplicationID( void ) {
     /** @req SWS_Os_00261 *//** !req SWS_Os_00262 */
